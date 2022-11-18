@@ -50,4 +50,9 @@ public class CandidateRESTController {
 	public List<Candidate> getCandidatesByCatId(@PathVariable("idCat") Long idCat) {
 		return candidateService.findByCategoryIdCat(idCat);
 	}
+	
+	@RequestMapping(value="/candidsByFirstname/{nom}",method = RequestMethod.GET)
+	public List<Candidate> findByFirstnameContains(@PathVariable("nom") String nom) {
+		return candidateService.findByFirstnameContains(nom);
+	}
 }

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
 import com.example.mohamed.entities.Candidate;
+import com.example.mohamed.entities.Category;
 
 @SpringBootApplication
 public class BourseAppApplication implements CommandLineRunner{
@@ -20,6 +21,7 @@ public class BourseAppApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		repositoryRestConfiguration.exposeIdsFor(Candidate.class);
+		repositoryRestConfiguration.exposeIdsFor(Candidate.class, Category.class);
+		
 	}
 }
