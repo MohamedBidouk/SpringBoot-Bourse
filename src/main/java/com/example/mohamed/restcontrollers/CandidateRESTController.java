@@ -15,13 +15,13 @@ import com.example.mohamed.entities.CandidateService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class CandidateRESTController {
 	
 	@Autowired
 	CandidateService candidateService;
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(path="all", method = RequestMethod.GET)
 	public List<Candidate> getAllCandidate() {
 		return candidateService.getAllCandidate();	
 	}
